@@ -1,7 +1,7 @@
 # Simple Slack "Hello" bot
-*| bot | boilerplate | java | slack | gson | maven |*
+*| bot | java | boilerplate | slack | maven |*
 
-## Owerview
+## Overview
 You can find here a not very smart bot for Slack, written in Java. Just send a friendly message to it and it will use it's all graceful mind and computing power to reply you "Hello, $username".
 
 ![](https://i.imgur.com/oDxWnRn.png)
@@ -11,7 +11,7 @@ This is also an simple and clean boilerplate to create bots for Slack from a scr
 It built upon Slack's [RTM API](https://api.slack.com/rtm) and [methods API](https://api.slack.com/methods) using [AHC](https://github.com/AsyncHttpClient/async-http-client) library as HTTP and WebSockets client with [GSON](https://github.com/google/gson) as JSON-coding tool.
 
 ## Building
-You will need JDK8 and Maven 3 installed to build this application.
+You will need JDK 8 and Maven 3 installed to build this application.
 The process is simple as:
 
 1. Clone this repo and `cd` into.
