@@ -12,9 +12,9 @@
         <dependency>
             <groupId>org.asynchttpclient</groupId>
             <artifactId>async-http-client</artifactId>
-            <!--Get version 2.0.XXX -->
+            <!--Set target version '2.0.XXX':-->
             <version>[2.0.0, 2.1.0)</version>
-            <!--Get version 2.XXX.XXX -->
+            <!--Set target version '2.XXX.XXX':-->
             <!--<version>[2.0.0,3.0.0)</version>-->
         </dependency>
         <dependency>
@@ -34,6 +34,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!--Use external repository if you want to:-->
     <!--<repositories>-->
         <!--<repository>-->
             <!--<id>jitpack.io</id>-->
@@ -43,6 +44,7 @@
 
     <build>
         <plugins>
+            <!--Set JDK version:-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -51,8 +53,8 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <!--Make JAR-file executable:-->
             <plugin>
-                <!-- Build an executable JAR -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.0.2</version>
@@ -61,11 +63,13 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
+                            <!--Set the main class relative to `./src/main/java` (with dots in path):-->
                             <mainClass>Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
+            <!--Archive all dependencies into `./target/lib`:-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
