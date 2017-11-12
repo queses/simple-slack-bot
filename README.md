@@ -4,7 +4,7 @@
 ## Overview
 You can find here a not very smart bot for Slack, written in Java. Just send a friendly message to it and it will use it's all graceful mind and computing power to reply you "Hello, $username".
 
-![](https://i.imgur.com/oDxWnRn.png)
+![Image](https://i.imgur.com/oDxWnRn.png)
 
 This is also an simple and clean boilerplate to create bots for Slack from a scratch, so just fork this repo and start your development.
 
@@ -21,3 +21,13 @@ The process is simple as:
 5. Run application with `make run` (or `java -jar target/slackbot-0.1.0.jar`)
 
 That's it! Now you can write handy messages to your bot. Check the [RTM API](https://api.slack.com/rtm) and [methods API](https://api.slack.com/methods) to continue development.
+
+## Deploying
+### Heroku
+To deploy on Heroku enter theese commands (suggesting that Herocu CLI is installed):
+
+```bash
+heroku create your-dyno-name # enter your desired name here
+heroku config:set BOT_TOKEN=XXXX-XXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXX BOT_USER=XXXXXXXXX
+heroku git:clone -a your-dyno-name
+```
