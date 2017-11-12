@@ -42,8 +42,8 @@ public class SlackBot {
 
     void reconnectWS(String url) throws Exception {
         connectionString = url;
-        ws.removeWebSocketListener(wsl);
         ws.sendCloseFrame();
+        ws.removeWebSocketListener(wsl);
         ws = null;
         initWS();
     }
@@ -55,8 +55,7 @@ public class SlackBot {
             put("user", userId);
         }};
         Response res = makeApiRequest("users.info", queryMap);
-        GsonSlackUser user = (new Gson()).fromJson(res.getResponseBody(), GsonSlackUser.class);
-        return user;
+        return (new Gson()).fromJson(res.getResponseBody(), GsonSlackUser.class);
     }
 
     private Response makeApiRequest(String path) throws Exception {
